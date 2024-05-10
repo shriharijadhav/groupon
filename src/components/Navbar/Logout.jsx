@@ -11,7 +11,7 @@ const Logout = () => {
        navigator('/') 
     },[]);
   return (
-    <Button onClick={()=>{dispatch(handleLogout())}}>
+    <Button onClick={()=>{dispatch(handleLogout())}} colorScheme='red'>
       Logout
     </Button>
   )

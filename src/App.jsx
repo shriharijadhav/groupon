@@ -9,8 +9,7 @@ import { Outlet } from 'react-router-dom'
 import AllRoutes from './components/AllRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
     <Flex w={'100vw'}   direction={'column'} justifyContent={'center'} alignItems={'center'}>
       

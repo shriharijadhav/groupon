@@ -9,7 +9,7 @@ const AllRoutes = () => {
         <Routes>
             <Route path='/' element={<Layout />}>
              <Route path='/login' element={<Login/>} />
-             {/* Add more routes for other pages */}
+              {/* Add more routes for other pages */}
             </Route>
         </Routes>
       
