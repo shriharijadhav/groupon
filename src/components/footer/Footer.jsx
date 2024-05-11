@@ -25,7 +25,7 @@ const Footer = () => {
                 <Button variant={'link'} p={'10px 15px '} color={'white'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}} border={'1px solid white'}>Help Center</Button>
                 {
                   footerLinks_column_one.map((item)=>(
-                    <Text color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
+                    <Text key={item.id} color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
                   ))
                 }
             </Flex>
@@ -34,7 +34,7 @@ const Footer = () => {
                     <Text variant={'link'} p={'10px 0px '} fontWeight={'700'} color={'white'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}} >Sell on Groupon</Text>
                     {
                       footerLinks_column_two.map((item)=>(
-                        <Text color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
+                        <Text key={item.id} color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
                       ))
                     }
                 </Flex>
@@ -42,7 +42,7 @@ const Footer = () => {
                 <Text variant={'link'} p={'10px 0px '} fontWeight={'700'} color={'white'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}} >Company</Text>
                 {
                       footerLinks_column_three.map((item)=>(
-                        <Text color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
+                        <Text key={item.id} color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName}</Text>
                       ))
                     }
                 </Flex>
@@ -50,7 +50,7 @@ const Footer = () => {
                 <Text variant={'link'} p={'10px 0px '} fontWeight={'700'} color={'white'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}} >Quick Links</Text>
                 {
                     footerLinks_column_four.map((item)=>(
-                      <Text color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName} +</Text>
+                      <Text key={item.id} color={'white'} cursor={'pointer'} _hover={{textDecoration:'underline',textUnderlineOffset:'5px'}}>{item.linkName} +</Text>
                     ))
                   }
               </Flex>

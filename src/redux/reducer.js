@@ -6,7 +6,7 @@ const initialState = {
     password:'',
     token:null,
 
-    // homepage_all_data:homepage_all_data,
+    homepage_all_data:homepage_all_data,
     // homepage_gifting_data:homepage_gifting_data,
     // category_local_data:category_local_data,
     // face_and_skin_care_data:face_and_skin_care_data
