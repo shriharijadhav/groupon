@@ -10,13 +10,17 @@ const AllRoutes = () => {
     <div>
         <Routes>
             <Route path='/' element={<Layout />}>
-            <Route path='/' element={<Homepage/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/deals/:productUrl' element={<SingleProductDetailsPage/>} />
+                <Route path='/' element={<Homepage/>} />
+                <Route path='/login' element={<Login/>} />
+                <Route path='/deals/:productUrl' element={<SingleProductDetailsPage/>} />
+
 
               {/* Add more routes for other pages */}
             </Route>
-        </Routes>
+
+             
+            
+         </Routes>
       
     </div>
   )

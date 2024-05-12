@@ -10,13 +10,14 @@ const ThumbnailsExample = () => {
   const thumbsRef = useRef(null);
 
   const allSlides =[
-    { id: 1,
-      imgUrl:'https://img.grouponcdn.com/bynder/WMjEMapAkR1m1NA4HksMWo3rFSp/WM-2048x1229/v1/t600x362.jpg'
-    },
+   
     {
         id:7,
         imgUrl:'https://mms.businesswire.com/media/20210804005698/en/896195/5/2021-07-29.jpg'
     },
+    { id: 1,
+        imgUrl:'https://img.grouponcdn.com/bynder/WMjEMapAkR1m1NA4HksMWo3rFSp/WM-2048x1229/v1/t600x362.jpg'
+      },
     { id: 2,
       imgUrl:'https://www.researchgate.net/publication/259189609/figure/fig1/AS:838493039239168@1576923727145/Example-of-Massage-Groupon-offer.jpg'
     },
@@ -53,23 +54,38 @@ const ThumbnailsExample = () => {
     gap: '1rem',
     pagination: false,
     height:'400px',
-  
+    width:'700px',
     cover: true,
     drag:true,
     breakpoints: {
+
             540: {
                 perPage: 1,
                 perMove: 1,
-                width:'450px',
-                height:'250px',
+                width:'550px',
+                height:'400px',
 
+
+            },
+            800: {
+                perPage: 1,
+                perMove: 1,
+                width:'350px',
+                height:'400px',
+
+            },
+            900: {
+                perPage: 1,
+                perMove: 1,
+                width:'350px',
+                height:'400px',
 
             },
             1024: {
                 perPage: 1,
                 perMove: 1,
                 width:'500px',
-                height:'300px',
+                height:'600px',
             },
       }
    };
@@ -100,7 +116,7 @@ const ThumbnailsExample = () => {
   };
 
   return (
-    <Box className="wrapper" w={'100%'} display={'flex'} flexDirection={'column'} >
+    <Box className="wrapper" w={'100%'} display={'flex'} flexDirection={'column'} gap={'10px'} >
 
       <Splide
         options={mainOptions}
