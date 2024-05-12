@@ -15,7 +15,8 @@ import {
   } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import medalImg from '../../images/logos/medal.svg'
-import SingleProductSlider from './SingleProductSlider';
+
+import ThumbnailsExample from './ThumbnailsExample';
 
 const SingleProductDetailsPage = () => {
     const params = useParams();
@@ -67,7 +68,20 @@ const SingleProductDetailsPage = () => {
 
     
  
-    
+    const allSlides =[
+        { id: 1,
+          imgUrl:'https://www.reliancedigital.in/medias/Reliance-Audio-Summer-Sale-1365x260-B.jpg?context=bWFzdGVyfGltYWdlc3wxODYwNTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDhlL2gyOC8xMDEzOTk3ODgyNTc1OC5qcGd8Y2JlMzgxZWFkOWE4NGYyOWU2YTYzZWM3MWRjZTQxYjA3YTM0ODcwMzFhZmE1MWFjYTFmMmIyMzAxZGFkMGU1Mw'
+        },
+        { id: 2,
+          imgUrl:'https://www.reliancedigital.in/medias/Great-deals-on-the-Newest-ACs-banner-D.jpg?context=bWFzdGVyfGltYWdlc3wxMjU3MTl8aW1hZ2UvanBlZ3xpbWFnZXMvaDFmL2hhZC8xMDEyOTU4MjUyMjM5OC5qcGd8MjQyZDdjZjdjOWQ4ZjgwODNiOTVkYjU5ODZlZjE0YTE5MWJkYWViMjdkMzhiZDcyY2E3MjIwY2ExYzIwNjJkZA'
+        },
+        { id: 4,
+          imgUrl:'https://www.reliancedigital.in/medias/Reliance-Audio-Summer-Sale-1365x260-B.jpg?context=bWFzdGVyfGltYWdlc3wxODYwNTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDhlL2gyOC8xMDEzOTk3ODgyNTc1OC5qcGd8Y2JlMzgxZWFkOWE4NGYyOWU2YTYzZWM3MWRjZTQxYjA3YTM0ODcwMzFhZmE1MWFjYTFmMmIyMzAxZGFkMGU1Mw'
+        },
+        { id: 5,
+          imgUrl:'https://www.reliancedigital.in/medias/Great-deals-on-the-Newest-ACs-banner-D.jpg?context=bWFzdGVyfGltYWdlc3wxMjU3MTl8aW1hZ2UvanBlZ3xpbWFnZXMvaDFmL2hhZC8xMDEyOTU4MjUyMjM5OC5qcGd8MjQyZDdjZjdjOWQ4ZjgwODNiOTVkYjU5ODZlZjE0YTE5MWJkYWViMjdkMzhiZDcyY2E3MjIwY2ExYzIwNjJkZA'
+        }
+      ]
 
     return (
     <Flex w={'100%'} justifyContent={'center'} alignItems={'center'} direction={'column'} p={'10px 0px'}>
@@ -113,10 +127,10 @@ const SingleProductDetailsPage = () => {
         </Flex>
 
         <Flex w={'80%'} direction={['column','column','column','row']}>
-            <Flex w={'600px'} bg={'green'}>
-                <SingleProductSlider/>
-
+            <Flex w={'60%'} bg={'green'}>
+                <ThumbnailsExample />
             </Flex>
+
             <Flex w={'40%'} bg={'red'}>a</Flex>
         </Flex>
 
