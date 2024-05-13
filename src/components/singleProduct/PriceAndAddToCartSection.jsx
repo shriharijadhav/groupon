@@ -1,13 +1,17 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Radio, RadioGroup } from '@chakra-ui/react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addSelectedProductToCart } from '../../redux/actions'
 import { useToast } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 const PriceAndAddToCartSection = ({productFetched}) => {
 
+    const [itemAddedToCartFlag,setItemAddedToCartFlag] = useState(false);
     const [selectedProductIndex, setSelectedProductIndex] = React.useState('0')
+    const cart = useSelector((store) =>store.cart);
+    const navigator = useNavigate();
 
     
     
@@ -20,6 +24,7 @@ const PriceAndAddToCartSection = ({productFetched}) => {
     const purchases_total_displayed = productFetched[0].attributes.purchases_total_displayed;
     const merchantName = productFetched[0].attributes.merchant_name;
     const productId = productFetched[0].itemId;
+    const productImageUrl = productFetched[0]?.attributes?.med_image;
 
     const value_array = JSON.parse(productFetched[0].attributes.value_array);
     const value = Number((value_array[0]))/100;
@@ -42,7 +47,8 @@ const PriceAndAddToCartSection = ({productFetched}) => {
         productValue:value,
         productPrice:price,
         productDiscount:discount,
-        productBoughtCount:purchases_total_displayed
+        productBoughtCount:purchases_total_displayed,
+        productImageUrl:productImageUrl
     }
 
     const subProductObject = {
@@ -51,7 +57,8 @@ const PriceAndAddToCartSection = ({productFetched}) => {
         productValue:subProduct_value,
         productPrice:subProduct_price,
         productDiscount:subProduct_discount,
-        productBoughtCount:purchases_total_displayed
+        productBoughtCount:purchases_total_displayed,
+        productImageUrl:productImageUrl
     }
 
     const totalProducts = [subProductObject,productObject]
@@ -74,6 +81,16 @@ const PriceAndAddToCartSection = ({productFetched}) => {
           })
            
     }
+    
+    
+
+    useEffect(()=>{
+        if(itemAddedToCartFlag){
+            navigator('/cart');
+
+        }
+    },[itemAddedToCartFlag])
+
   return (
     <Flex w={'100%'}   justifyContent={'center'} alignItems={'center'} p={'10px 0px'}>
     <Flex w={'80%'} gap={'10px'} direction={'column'}>
@@ -133,7 +150,7 @@ const PriceAndAddToCartSection = ({productFetched}) => {
 
    <Button bg={'#0077D9'} _hover={{bg:'#015EAA'}} color={'white'}>Buy Now</Button>
    <Button bg={'white'} color={'#0077D9'} outline={'1px solid #0077D9'} _hover={{bg:'#0077D9',color:'white'}}
-   onClick={()=>{dispatch(addSelectedProductToCart(totalProducts[Number(selectedProductIndex)],Number(selectedProductIndex)));generateToast()}}
+   onClick={()=>{dispatch(addSelectedProductToCart(totalProducts[Number(selectedProductIndex)],Number(selectedProductIndex)));generateToast();setItemAddedToCartFlag(true)}}
    >Add to Cart</Button>
    
    </Flex>

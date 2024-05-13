@@ -719,41 +719,7 @@ export const homepage_all_data = [
             "views_24h": 0
         }
     },
-    {
-        "itemId": "e1a0a966-37ab-4b90-af23-ea8fab7ef788",
-        "score": 0.28983328521543195,
-        "attributes": {
-            "title_array": "[\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\",\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\"]",
-            "gallery_title": "Up to 20% Off Beer Soak at Piva Beer Spa",
-            "currency": "USD",
-            "category": "{\"Local\":{\"Beauty & Spas\":{\"Spas\":{\"Day Spas\":1}}}}",
-            "inventory_service_id": "vis",
-            "restricted_reason": "[]",
-            "restricted": 0,
-            "show_discount": 1,
-            "eligible_for_groupon_incentives": 1,
-            "pds_id": "decc3fb5-c213-4f76-ba13-cba4c6daa474",
-            "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
-            "inventory_product_id": "12cf01d3-38ae-4703-9ce1-5feda6bed51c",
-            "minimum_purchase_quantity": 1,
-            "_customer_item_id": "e1a0y966-37ab-4b90-af23-ea8fab7ff788",
-            "channel": "g1",
-            "discount_percent_array": "[0.0,0.0,13.0,20.0]",
-            "is_bookable": 0,
-            "is_travel_bookable_deal": 0,
-            "med_image": "https://img.grouponcdn.com/deal/4WA57hZvmMpf6E66MfnMcE4fmSwT/4W-1200x720/v1/t300x182.jpg",
-            "merchant_name": "Piva Beer Spa",
-            "price_array": "[15500.0,31000.0,13500.0,24900.0]",
-            "purchases_total_displayed": 1190,
-            "rating_count": 569,
-            "rating_value": 4.9,
-            "redemption_locations_short": "[{\"city\":\"Chicago\",\"country\":\"US\",\"lat\":41.9008895,\"lng\":-87.6629882,\"redemptionLocationType\":\"default\",\"streetAddress1\":\"1052 North Milwaukee Avenue\",\"uuid\":\"02228cff-0bec-b4f3-b550-0165cf78629d\"}]",
-            "title_general": "Beer Soak with Steam Room and Sauna for One or Two at Piva Beer Spa (Up to 20% Off)",
-            "url": "https://www.groupon.com/deals/piva-beer-spa-3",
-            "value_array": "[15500,31000,15500,31000]",
-            "views_24h": 0
-        }
-    },
+    
     {
         "itemId": "991b7781-4dca-4e93-8cb3-c492095491b5",
         "score": 0.3533147449265332,
@@ -1554,41 +1520,7 @@ export const homepage_all_data = [
             "views_24h": 0
         }
     },
-    {
-        "itemId": "e1a0a966-37ab-4x90-af23-ea8fab7ff788",
-        "score": 0.008140056579287928,
-        "attributes": {
-            "title_array": "[\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\",\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\"]",
-            "gallery_title": "Up to 20% Off Beer Soak at Piva Beer Spa",
-            "currency": "USD",
-            "category": "{\"Local\":{\"Beauty & Spas\":{\"Spas\":{\"Day Spas\":1}}}}",
-            "inventory_service_id": "vis",
-            "restricted_reason": "[]",
-            "restricted": 0,
-            "show_discount": 1,
-            "eligible_for_groupon_incentives": 1,
-            "pds_id": "decc3fb5-c213-4f76-ba13-cba4c6daa474",
-            "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
-            "inventory_product_id": "12cf01d3-38ae-4703-9ce1-5feda6bed51c",
-            "minimum_purchase_quantity": 1,
-            "_customer_item_id": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
-            "channel": "g1",
-            "discount_percent_array": "[0.0,0.0,13.0,20.0]",
-            "is_bookable": 0,
-            "is_travel_bookable_deal": 0,
-            "med_image": "https://img.grouponcdn.com/deal/4WA57hZvmMpf6E66MfnMcE4fmSwT/4W-1200x720/v1/t300x182.jpg",
-            "merchant_name": "Piva Beer Spa",
-            "price_array": "[15500.0,31000.0,13500.0,24900.0]",
-            "purchases_total_displayed": 1190,
-            "rating_count": 569,
-            "rating_value": 4.9,
-            "redemption_locations_short": "[{\"city\":\"Chicago\",\"country\":\"US\",\"lat\":41.9008895,\"lng\":-87.6629882,\"redemptionLocationType\":\"default\",\"streetAddress1\":\"1052 North Milwaukee Avenue\",\"uuid\":\"02228cff-0bec-b4f3-b550-0165cf78629d\"}]",
-            "title_general": "Beer Soak with Steam Room and Sauna for One or Two at Piva Beer Spa (Up to 20% Off)",
-            "url": "https://www.groupon.com/deals/piva-beer-spa-3",
-            "value_array": "[15500,31000,15500,31000]",
-            "views_24h": 0
-        }
-    }
+   
 
 ]
 
@@ -1908,41 +1840,7 @@ export const category_local_data = [
             "views_24h": 0
         }
     },
-    {
-        "itemId": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
-        "score": 0.008140056579287928,
-        "attributes": {
-            "title_array": "[\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\",\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\"]",
-            "gallery_title": "Up to 20% Off Beer Soak at Piva Beer Spa",
-            "currency": "USD",
-            "category": "{\"Local\":{\"Beauty & Spas\":{\"Spas\":{\"Day Spas\":1}}}}",
-            "inventory_service_id": "vis",
-            "restricted_reason": "[]",
-            "restricted": 0,
-            "show_discount": 1,
-            "eligible_for_groupon_incentives": 1,
-            "pds_id": "decc3fb5-c213-4f76-ba13-cba4c6daa474",
-            "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
-            "inventory_product_id": "12cf01d3-38ae-4703-9ce1-5feda6bed51c",
-            "minimum_purchase_quantity": 1,
-            "_customer_item_id": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
-            "channel": "g1",
-            "discount_percent_array": "[0.0,0.0,13.0,20.0]",
-            "is_bookable": 0,
-            "is_travel_bookable_deal": 0,
-            "med_image": "https://img.grouponcdn.com/deal/4WA57hZvmMpf6E66MfnMcE4fmSwT/4W-1200x720/v1/t300x182.jpg",
-            "merchant_name": "Piva Beer Spa",
-            "price_array": "[15500.0,31000.0,13500.0,24900.0]",
-            "purchases_total_displayed": 1190,
-            "rating_count": 569,
-            "rating_value": 4.9,
-            "redemption_locations_short": "[{\"city\":\"Chicago\",\"country\":\"US\",\"lat\":41.9008895,\"lng\":-87.6629882,\"redemptionLocationType\":\"default\",\"streetAddress1\":\"1052 North Milwaukee Avenue\",\"uuid\":\"02228cff-0bec-b4f3-b550-0165cf78629d\"}]",
-            "title_general": "Beer Soak with Steam Room and Sauna for One or Two at Piva Beer Spa (Up to 20% Off)",
-            "url": "https://www.groupon.com/deals/piva-beer-spa-3",
-            "value_array": "[15500,31000,15500,31000]",
-            "views_24h": 0
-        }
-    },
+    
     {
         "itemId": "e6be0c4d-c9c3-49b1-892d-e68cd125d08a",
         "score": 0.007189208356672002,

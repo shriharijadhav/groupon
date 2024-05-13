@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Grid, Image, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import StarRating from '../homepage/StarRating';
 import { SlLocationPin } from "react-icons/sl";
 import { AiOutlineTag } from "react-icons/ai";
@@ -47,28 +47,38 @@ const SingleProductDetailsPage = () => {
         if(url === productUrl) return item
 
     } )
-
-    const productTitle = JSON.parse( productFetched[0].attributes.title_array)[0];
-    const gallery_title = productFetched[0].attributes.gallery_title;
-    const productCity = JSON.parse(productFetched[0].attributes.redemption_locations_short )[0].city;
-    const productStreet = JSON.parse(productFetched[0].attributes.redemption_locations_short )[0].streetAddress1;
-    const rating = productFetched[0].attributes.rating_value;
-    const rating_count = productFetched[0].attributes.rating_count;
-    const purchases_total_displayed = productFetched[0].attributes.purchases_total_displayed;
-    const merchantName = productFetched[0].attributes.merchant_name;
-    const firstSlideImageUrl = productFetched[0].attributes.med_image;
+    const navigator = useNavigate()
 
 
-    const value_array = JSON.parse(productFetched[0].attributes.value_array);
+    useEffect(() =>{
+        if(productFetched.length===0){
+            navigator('/')
+            return
+        }
+    },[]);
+   
+
+    const productTitle = productFetched.length !== 0 &&  JSON.parse( productFetched[0].attributes.title_array)[0];
+    const gallery_title = productFetched.length !== 0 &&  productFetched[0].attributes.gallery_title;
+    const productCity =  productFetched.length !== 0 && JSON.parse(productFetched[0].attributes.redemption_locations_short )[0].city;
+    const productStreet = productFetched.length !== 0 &&  JSON.parse(productFetched[0].attributes.redemption_locations_short )[0].streetAddress1;
+    const rating = productFetched.length !== 0 &&  productFetched[0].attributes.rating_value;
+    const rating_count = productFetched.length !== 0 &&  productFetched[0].attributes.rating_count;
+    const purchases_total_displayed = productFetched.length !== 0 &&  productFetched[0].attributes.purchases_total_displayed;
+    const merchantName = productFetched.length !== 0 &&  productFetched[0].attributes.merchant_name;
+    const firstSlideImageUrl = productFetched.length !== 0 &&  productFetched[0].attributes.med_image;
+
+
+    const value_array = productFetched.length !== 0 && JSON.parse(productFetched[0].attributes.value_array);
     const value = Number((value_array[0]))/100;
 
-    const discount_percent_array = JSON.parse(productFetched[0].attributes.discount_percent_array);
+    const discount_percent_array = productFetched.length !== 0 && JSON.parse(productFetched[0].attributes.discount_percent_array);
     const discount = Number((discount_percent_array[0]));
 
-    const price_array = JSON.parse(productFetched[0].attributes.price_array);
+    const price_array = productFetched.length !== 0 && JSON.parse(productFetched[0].attributes.price_array);
     const price = Number((price_array[0]))/100;
 
-    const subProduct_title = JSON.parse( productFetched[0].attributes.title_array)[1]; 
+    const subProduct_title = productFetched.length !== 0 && JSON.parse( productFetched[0].attributes.title_array)[1]; 
     const subProduct_price = Number((price_array[1]))/100;
     const subProduct_value = Number((value_array[1]))/100;
     const subProduct_discount = Number((discount_percent_array[1]));
@@ -78,12 +88,17 @@ const SingleProductDetailsPage = () => {
     // console.log(productFetched)
     // console.log('mm',rating)
 
-    
  
    
 
       useEffect(() => {
         // Scroll to the top of the page when the component mounts
+
+        if(productFetched.length===0){
+            navigator('/pageNotFound');
+        }
+
+
         window.scrollTo(0, 0);
       }, [productFetched,productUrl,firstSlideImageUrl,params]);
 
@@ -123,7 +138,11 @@ const SingleProductDetailsPage = () => {
             </Flex>
             <Flex justifyContent={'left' } alignItems={'center'} w={'100%'}  gap={'10px'}>
                 <Text>{rating}</Text>
-                <StarRating  ratingPoints={rating}/>
+                {
+                    productFetched.length > 0 && (
+                        <StarRating  ratingPoints={rating}/>
+                    )
+                }
                 <Text>{rating_count}</Text>
                 <Text>Groupon Ratings</Text>
             </Flex>
@@ -320,7 +339,11 @@ const SingleProductDetailsPage = () => {
 
             <Flex w={['90%','90%','50%','40%']}   h={'max-content'}>
 
-            <PriceAndAddToCartSection productFetched={productFetched} />
+            {
+                productFetched.length > 0 && (
+                    <PriceAndAddToCartSection productFetched={productFetched} />
+                )
+            }
             </Flex>
         </Flex>
 

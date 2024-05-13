@@ -9,17 +9,32 @@ import { useSelector } from 'react-redux';
 import Logout from './Logout';
 import MainMenu from './MainMenu';
 import GlobalSearchBar from './GlobalSearchBar';
- 
+import { IoCartOutline } from "react-icons/io5";
+
+import { IoHomeOutline } from "react-icons/io5";
 
 
 const DefaultNavbar = () => {
     const token = useSelector((store) =>store.token);
+    
   return (
     <Flex w={'100%'} bg={'#230F33'} h={'225px'} justifyContent={'center'} >
         <Flex w={'80%'} direction={'column'} p={'5px 0px'}>
 
              <Flex w={'100%'}  justifyContent={'end'} gap={'5px'} fontSize={'small'} color={'white'} _hover={{textUnderlineOffset:'5px'}}>
                 <Flex justifyContent={'center'} alignItems={'center'} gap={'0px'}  p={'2px'} cursor={'pointer'} _hover={{textDecoration:'underline'}}>
+                <Link to={'/'}>
+                    <Flex alignItems={'center'} gap={'5px'} p={'0px 10px'}>
+                    <IoHomeOutline/>
+                    <Text>Home</Text>
+                    </Flex>
+                </Link>
+                <Link to={'/cart'}>
+                    <Flex alignItems={'center'} gap={'5px'}>
+                    <IoCartOutline/>
+                    <Text>Cart</Text>
+                    </Flex>
+                </Link>
                     <IconButton 
                     color={'white'}
                     variant={'ghost'}

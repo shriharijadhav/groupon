@@ -1,4 +1,4 @@
-import { ADD_SELECTED_PRODUCT_TO_CART, HANDLE_LOGOUT, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes";
+import { ADD_SELECTED_PRODUCT_TO_CART, HANDLE_LOGOUT, REMOVE_PRODUCT_FROM_CART, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes";
 import { category_local_data, face_and_skin_care_data, homepage_all_data, homepage_gifting_data } from "./allProductData";
 
 const initialState = {
@@ -37,8 +37,8 @@ export const reducer = (state=initialState, action) =>{
                         }
                     }
                 })
-                
-                if (updatedCart !== undefined) {
+                console.log('updatedCart',typeof(updatedCart[0]))
+                if (updatedCart[0] !== undefined) {
                     console.log('updated cart part')
                     return {
                         ...state,cart:updatedCart
@@ -63,6 +63,12 @@ export const reducer = (state=initialState, action) =>{
                 ...state,token:null
             }
             break;
+    case REMOVE_PRODUCT_FROM_CART:
+            let tempCart = state.cart.filter((item)=> item.productId !== action.payload)
+                return {
+                    ...state,cart:tempCart
+                }
+                break;            
           
         default:
             return state
