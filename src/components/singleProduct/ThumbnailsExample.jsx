@@ -1,16 +1,27 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Box } from '@chakra-ui/react';
 
  import '@splidejs/react-splide/css';
+import { useParams } from 'react-router-dom';
 
 
-const ThumbnailsExample = () => {
+const ThumbnailsExample = ({firstSlideImageUrl}) => {
+    const [productImageUrl, setProductImageUrl] = useState(firstSlideImageUrl);
+    console.log(productImageUrl)
+
+
+    const params = useParams();
+    const {productUrl} = params;
   const mainRef = useRef(null);
   const thumbsRef = useRef(null);
 
-  const allSlides =[
-   
+  let allSlides =[
+    {
+        id:100,
+        imgUrl:`${productImageUrl}`
+    },
+    
     {
         id:7,
         imgUrl:'https://mms.businesswire.com/media/20210804005698/en/896195/5/2021-07-29.jpg'
@@ -24,10 +35,7 @@ const ThumbnailsExample = () => {
     { id: 4,
       imgUrl:'https://img.grouponcdn.com/seocms/phmec2nD2nLpLx2mG1x4av668Wp/5-Easy-meals_1000-x-500px_GRN_jpg-1000x500/v1/c1000x500'
     },
-    { id: 5,
-      imgUrl:'https://img.grouponcdn.com/deal/4BNPVC7YFWhHTb24tsTpiwphJHrA/4B-800x480/v1/t600x362.jpg'
-    },
-     
+         
     {
         id:6,
         imgUrl:'https://img.grouponcdn.com/deal/vkMpJ8DVN4wbGdW3xuuVqA/481553475-1000x600/v1/t600x362.jpg'
@@ -36,13 +44,25 @@ const ThumbnailsExample = () => {
 
   useEffect(() => {
     if (mainRef.current && thumbsRef.current && thumbsRef.current.splide) {
-      mainRef.current.sync(thumbsRef.current.splide);
-    }
+        mainRef.current.sync(thumbsRef.current.splide);
+      }
+  
   }, []);
 
+  useEffect(() => {
+    setProductImageUrl(prev=>firstSlideImageUrl)
+  },[firstSlideImageUrl,productImageUrl,allSlides])
+
+ 
+
   const renderSlides = () => {
+    console.log('renderSlides')
     return allSlides.map((slide, index) => (
+        
       <SplideSlide key={index}>
+      {
+        console.log(slide.imgUrl)
+      }
         <img src={slide.imgUrl} alt={'slide.alt'} />
       </SplideSlide>
     ));
@@ -117,13 +137,14 @@ const ThumbnailsExample = () => {
 
   return (
     <Box className="wrapper" w={'100%'} display={'flex'} flexDirection={'column'} gap={'10px'} >
-
+    {console.log('rendering')}
       <Splide
         options={mainOptions}
         ref={mainRef}
         aria-labelledby="thumbnail-slider-example"
  
        >
+     
         {renderSlides()}
       </Splide>
 
@@ -133,6 +154,7 @@ const ThumbnailsExample = () => {
       ref={thumbsRef}
       aria-label="The carousel with thumbnails. Selecting a thumbnail will change the main carousel"
     >
+   
       {renderSlides()}
     </Splide>
       </Box>

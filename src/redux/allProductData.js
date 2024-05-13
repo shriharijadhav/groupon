@@ -720,7 +720,7 @@ export const homepage_all_data = [
         }
     },
     {
-        "itemId": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
+        "itemId": "e1a0a966-37ab-4b90-af23-ea8fab7ef788",
         "score": 0.28983328521543195,
         "attributes": {
             "title_array": "[\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\",\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\"]",
@@ -736,7 +736,7 @@ export const homepage_all_data = [
             "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
             "inventory_product_id": "12cf01d3-38ae-4703-9ce1-5feda6bed51c",
             "minimum_purchase_quantity": 1,
-            "_customer_item_id": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
+            "_customer_item_id": "e1a0y966-37ab-4b90-af23-ea8fab7ff788",
             "channel": "g1",
             "discount_percent_array": "[0.0,0.0,13.0,20.0]",
             "is_bookable": 0,
@@ -1275,7 +1275,7 @@ export const homepage_all_data = [
         }
     },
     {
-        "itemId": "9dd818f1-0917-4506-933a-9864e893d570",
+        "itemId": "9dd818f1-0917-4506-933a-9864e893d580",
         "score": 0.0634280579274272,
         "attributes": {
             "title_array": "[\"60-Minute Swedish or Deep Tissue Massage with Aromatherapy, Steam Shower, and 60-Minute European Facial for Two\",\"60-Minute Swedish or Deep Tissue Massage with Aromatherapy, Steam Shower, and 60-Minute European Facial for One\"]",
@@ -1291,7 +1291,7 @@ export const homepage_all_data = [
             "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
             "inventory_product_id": "a527c98d-f51a-4d6b-a27a-952a6c185c75",
             "minimum_purchase_quantity": 1,
-            "_customer_item_id": "9dd818f1-0917-4506-933a-9864e893d570",
+            "_customer_item_id": "9dd818f1-0917-4506-933a-9864eu93d570",
             "channel": "g1",
             "discount_percent_array": "[25.0,25.0]",
             "is_bookable": 0,
@@ -1555,7 +1555,7 @@ export const homepage_all_data = [
         }
     },
     {
-        "itemId": "e1a0a966-37ab-4b90-af23-ea8fab7ff788",
+        "itemId": "e1a0a966-37ab-4x90-af23-ea8fab7ff788",
         "score": 0.008140056579287928,
         "attributes": {
             "title_array": "[\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\",\"Beer Soak with Steam Room and Sauna for One\",\"Beer Soak with Steam Room and Sauna for Two\"]",
@@ -1629,7 +1629,7 @@ export const category_local_data = [
         }
     },
     {
-        "itemId": "9dd818f1-0917-4506-933a-9864e893d570",
+        "itemId": "9dd818f1-0917-4506-933a-9864e893d50",
         "score": 0.0634280579274272,
         "attributes": {
             "title_array": "[\"60-Minute Swedish or Deep Tissue Massage with Aromatherapy, Steam Shower, and 60-Minute European Facial for Two\",\"60-Minute Swedish or Deep Tissue Massage with Aromatherapy, Steam Shower, and 60-Minute European Facial for One\"]",
@@ -1645,7 +1645,7 @@ export const category_local_data = [
             "channel_id": "2064915a-347c-410d-a18a-76556d5540fe",
             "inventory_product_id": "a527c98d-f51a-4d6b-a27a-952a6c185c75",
             "minimum_purchase_quantity": 1,
-            "_customer_item_id": "9dd818f1-0917-4506-933a-9864e893d570",
+            "_customer_item_id": "9dd818f1-0917-4506-633a-9864e891d570",
             "channel": "g1",
             "discount_percent_array": "[25.0,25.0]",
             "is_bookable": 0,

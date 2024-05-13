@@ -1,5 +1,5 @@
 import axios from "axios"
-import { HANDLE_LOGOUT, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes"
+import { ADD_SELECTED_PRODUCT_TO_CART, HANDLE_LOGOUT, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes"
 
 export const updateLoginFormData = (data,fieldName)=>{
     return {
@@ -32,3 +32,9 @@ export const handleLogout = ()=>{
     }
 }
 
+export const addSelectedProductToCart = (product,productIndex)=>{
+    console.log(product)
+    return{
+        type:ADD_SELECTED_PRODUCT_TO_CART,payload:product,productIndex:productIndex
+    }
+}

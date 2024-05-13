@@ -26,10 +26,12 @@ import medalImg from '../../images/logos/medal.svg'
 import ThumbnailsExample from './ThumbnailsExample';
 import MySlider from './MySlider';
 import { recommendedDealsData, similarDealsData } from './sliderData';
+import PriceAndAddToCartSection from './PriceAndAddToCartSection';
 
 const SingleProductDetailsPage = () => {
     const params = useParams();
     const {productUrl} = params;
+    console.log(productUrl,'prodct details')
 
     const homepage_all_data = useSelector((store)=>store.homepage_all_data);
 
@@ -54,6 +56,7 @@ const SingleProductDetailsPage = () => {
     const rating_count = productFetched[0].attributes.rating_count;
     const purchases_total_displayed = productFetched[0].attributes.purchases_total_displayed;
     const merchantName = productFetched[0].attributes.merchant_name;
+    const firstSlideImageUrl = productFetched[0].attributes.med_image;
 
 
     const value_array = JSON.parse(productFetched[0].attributes.value_array);
@@ -82,7 +85,7 @@ const SingleProductDetailsPage = () => {
       useEffect(() => {
         // Scroll to the top of the page when the component mounts
         window.scrollTo(0, 0);
-      }, [productFetched]);
+      }, [productFetched,productUrl,firstSlideImageUrl,params]);
 
     return (
     <Flex w={'100%'} justifyContent={'center'} alignItems={'center'} direction={'column'} p={'10px 0px'}>
@@ -127,9 +130,9 @@ const SingleProductDetailsPage = () => {
             
         </Flex>
 
-        <Flex w={'80%'} direction={['column','column','column','row']}>
-            <Flex w={'60%'} direction={'column'} >
-                <ThumbnailsExample />
+        <Flex w={['100%','100%','80%','80%']} direction={['column','column','column','row']} justifyContent={['center','center','center','center']} alignItems={['center','center','start','start']} gap={['30px']}>
+            <Flex w={['90%','90%','50%','60%']} direction={'column'} >
+                <ThumbnailsExample firstSlideImageUrl={firstSlideImageUrl} />
 
                 <Flex p={'30px 0px'} pb={'20px'} direction={'column'}>
                     <Text fontSize={'2xl'} fontWeight={'700'}>Highlights</Text>
@@ -315,14 +318,17 @@ const SingleProductDetailsPage = () => {
 
             </Flex>
 
-            <Flex w={'40%'} bg={'red'}>a</Flex>
+            <Flex w={['90%','90%','50%','40%']}   h={'max-content'}>
+
+            <PriceAndAddToCartSection productFetched={productFetched} />
+            </Flex>
         </Flex>
 
         <Flex w={'80%'} mt={'40px'} p={'10px'} >
           <Text fontSize={'x-large'} fontWeight={'700'}>Similar deals</Text>
         </Flex>
         <Flex w={'85%'}   >
-        <MySlider sliderData={similarDealsData}/>
+        <MySlider sliderData={similarDealsData}  />
         </Flex>
 
         <Flex w={'80%'} mt={'40px'} p={'10px'} >
@@ -333,36 +339,7 @@ const SingleProductDetailsPage = () => {
         </Flex>
 
 
-      <Flex w={'80%'} gap={'10px'} direction={'column'}>
-            <Flex>{productTitle}</Flex>
-            <Flex>{productStreet}, {productCity}</Flex>
-            <Flex>{gallery_title}</Flex>
-            <Flex>
-                <Text>{rating}</Text>
-                <StarRating  ratingPoints={rating}/>
-                <Text>{rating_count}</Text>
-                <Text>Groupon Ratings</Text>
-            </Flex>
-            <Flex gap={'10px'}>
-            <Text>{productTitle}</Text>
-            <Text>${price}</Text>
-            <Text>${value}</Text>
-            <Text>{discount}%</Text>
-            <Text>{purchases_total_displayed}+ bought</Text>
-        </Flex>
-
-            
-            <Flex gap={'10px'}>
-                <Text>{subProduct_title}</Text>
-                <Text>${subProduct_price}</Text>
-                <Text>${subProduct_value}</Text>
-                <Text>{subProduct_discount}%</Text>
-                <Text>{purchases_total_displayed}+ bought</Text>
-
-            </Flex>
-
-
-      </Flex>
+      
     </Flex>
   )
 }

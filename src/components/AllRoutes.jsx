@@ -4,6 +4,7 @@ import Login from './Login'
 import Layout from './Layout'
 import Homepage from './homepage/Homepage'
 import SingleProductDetailsPage from './singleProduct/SingleProductDetailsPage'
+import PageNotFound from './PageNotFound'
  
 const AllRoutes = () => {
   return (
@@ -16,10 +17,11 @@ const AllRoutes = () => {
 
 
               {/* Add more routes for other pages */}
+              <Route path='*' element={<PageNotFound/>}/>
+
             </Route>
 
              
-            
          </Routes>
       
     </div>
