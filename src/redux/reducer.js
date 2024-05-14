@@ -1,4 +1,4 @@
-import { ADD_SELECTED_PRODUCT_TO_CART, HANDLE_LOGOUT, REMOVE_PRODUCT_FROM_CART, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes";
+import { ADD_SELECTED_PRODUCT_TO_CART, CLEAR_THE_SEARCHBAR_INPUT, DISPLAY_SEARCH_RESULTS, EMPTY_SEARCH_RESULT_ARRAY, GET_SEARCH_INPUT, HANDLE_LOGOUT, REMOVE_PRODUCT_FROM_CART, SET_TOKEN, UPDATE_LOGIN_FORM_DATA } from "./actionTypes";
 import { category_local_data, face_and_skin_care_data, homepage_all_data, homepage_gifting_data } from "./allProductData";
 
 const initialState = {
@@ -6,6 +6,9 @@ const initialState = {
     password:'',
     token:null,
     cart:[],
+
+    searchInput:'',
+    allSearchResults:[],
 
     homepage_all_data:homepage_all_data,
     // homepage_gifting_data:homepage_gifting_data,
@@ -69,7 +72,59 @@ export const reducer = (state=initialState, action) =>{
                     ...state,cart:tempCart
                 }
                 break;            
-          
+    case GET_SEARCH_INPUT:
+                return {
+                    ...state,searchInput:action.payload
+                }
+                break;
+    case DISPLAY_SEARCH_RESULTS:
+               if (state.searchInput.length > 0) {
+                const formatted_homepage_all_data = state.homepage_all_data.map((item)=>{
+                    let new_title_array = JSON.parse(item.attributes.title_array);
+                    const tempItem = {
+                     ...item,
+                     attributes:{
+                         ...item.attributes,
+                         title_array:new_title_array
+                     }
+                    }
+                    // console.log(tempItem)
+                    return tempItem
+             }) ;
+
+             const tempAllSearchResults = formatted_homepage_all_data.filter((item)=>{
+                 let titleFoundFlag = false ;
+                 item.attributes.title_array.map((title)=>{
+                     if(title.toLowerCase().includes(state.searchInput.toLowerCase())){
+                         titleFoundFlag = true
+                     }
+                 })
+                 if(titleFoundFlag){
+                     return item
+                 }
+             })
+            //  console.log(tempAllSearchResults)
+             return {
+                ...state,allSearchResults:tempAllSearchResults
+             }
+               } else {
+                return state
+
+               }
+
+              
+                break;    
+        case CLEAR_THE_SEARCHBAR_INPUT:
+            return {
+                ...state,searchInput:'',allSearchResults:[]
+            }
+            break;                                        
+        case EMPTY_SEARCH_RESULT_ARRAY:
+            return {
+                ...state,allSearchResults:[]
+            }
+            break;                                        
+            
         default:
             return state
             break;

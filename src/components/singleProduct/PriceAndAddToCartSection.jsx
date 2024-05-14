@@ -89,7 +89,7 @@ const PriceAndAddToCartSection = ({productFetched}) => {
             navigator('/cart');
 
         }
-    },[itemAddedToCartFlag])
+    },[ ])
 
   return (
     <Flex w={'100%'}   justifyContent={'center'} alignItems={'center'} p={'10px 0px'}>
